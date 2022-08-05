@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 const sequelize = require("../config");
 
-const Genre = sequelize.define(
+const Movie = sequelize.define(
   "Movie",
   {
     id: {
@@ -48,4 +48,4 @@ const Genre = sequelize.define(
   }
 );
 
-module.exports = Genre;
+module.exports = Movie;

@@ -24,6 +24,22 @@ const moviesController = {
 
     response.render("moviesDetail", { movie: movie });
   },
+  addMovieScreen:  async(request, response) => {
+    response.render("moviesAdd");
+  },
+  add: async(request, response) => {
+
+  },
+
+  edit: async(request, response) => {
+
+  },
+
+  delete: async(request, response) =>{
+    const { id } = request.params;
+
+    const movie = await movieModel
+  },
 };
 
 module.exports = moviesController;

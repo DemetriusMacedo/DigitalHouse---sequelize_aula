@@ -27,8 +27,8 @@ router.delete("/movies/:id", moviesController.delete);
 router.get("/movies/edit/:id", moviesController.updateMovieScreen);
 router.put("/movies/:id", moviesController.update);
 
-// router.get("/movies/delete/:id", moviesController.deleteMovieScreen);
-// router.delete("/movies/:id", moviesController.delete);
+router.get("/movies/delete/:id", moviesController.deleteMovieScreen);
+router.delete("/movies/:id", moviesController.delete);
 
 
 module.exports = router;

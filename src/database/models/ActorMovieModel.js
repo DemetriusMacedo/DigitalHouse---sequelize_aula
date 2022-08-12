@@ -2,22 +2,13 @@ const { DataTypes } = require("sequelize");
 
 const sequelize = require("../config");
 
-const Genre = sequelize.define(
-  "Genre",
+const ActorMovie = sequelize.define(
+  "ActorMovie",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-    },
-    ranking: {
-      type: DataTypes.INTEGER,
-    },
-    active: {
-      type: DataTypes.TINYINT,
     },
     createdAt: {
       type: DataTypes.DATE,
@@ -27,19 +18,21 @@ const Genre = sequelize.define(
       type: DataTypes.DATE,
       field: "updated_at",
     },
+    actorId: {
+      type: DataTypes.INTEGER,
+      field: "actor_id",
+    },
+    movieId: {
+      type: DataTypes.INTEGER,
+      field: "movie_id",
+    }
   },
   {
-    tableName: "genres",
+    tableName: "actor_movie",
     timestamps: true,
     createdAt: "createdAt",
     updatedAt: "updatedAt",
   }
-);
+  );
 
-// Genre.hasMany(Movie,{
-//   as: 'movies',
-//   foreignKey: genreId,
-// });
-
-
-module.exports = Genre;
+  module.exports = ActorMovie;

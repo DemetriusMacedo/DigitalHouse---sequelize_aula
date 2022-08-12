@@ -48,4 +48,24 @@ const Movie = sequelize.define(
   }
 );
 
+Genre.hasMany(Movie,{
+  as: 'movies',
+  foreignKey: genreId,
+});
+
+Movie.belongsTo(Genre, {
+  as: 'genre',
+  foreignKey: 'genreId'
+});
+
+Movie.belongsToMany(Actor, { 
+  through: 'ActorMovies',
+  foreignKey: 'actorID' ,
+});
+// Movie.hasMany(Actor, {
+//   as: 'actor',
+//   foreignKey: 
+// })
+
 module.exports = Movie;
+

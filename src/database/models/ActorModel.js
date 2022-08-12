@@ -42,4 +42,9 @@ const Actor = sequelize.define(
   }
 );
 
+Actor.belongsToMany(Movie, { 
+  through: 'ActorMovies',
+  foreignKey: 'movieId',
+});
+
 module.exports = Actor;
